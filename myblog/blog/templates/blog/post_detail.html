@@ -2,16 +2,19 @@
 
     {% block content %}
         <div class="post">
-            <div class=btn-toolbar>
-                {% if post.published_date %}
-                    {{ post.published_date }}
-                {% else %}
+            <div class=btn-group>
+                {% if not post.published_date %}
                     <a class="btn btn-default btn-lg" href="{% url "blog.views.post_publish" pk=post.pk %}"><span>Publish</span></a>
                 {% endif %}
-                <a class="btn btn-default btn-lg" href="{% url "post_edit" pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a class="btn btn-default btn-lg" href="{% url "post_remove" pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default btn-lg" href="{% url "post_edit" pk=post.pk %}"><span style="font-size:1.3em;" class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-default btn-lg" href="{% url "post_remove" pk=post.pk %}"><span style="font-size:1.3em;" class="glyphicon glyphicon-remove"></span></a>
             </div>
             <h1>{{ post.title }}</h1>
             <p>{{ post.text|linebreaks }}</p>
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
         </div>
     {% endblock %}

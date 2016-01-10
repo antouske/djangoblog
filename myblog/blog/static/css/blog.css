@@ -50,7 +50,9 @@
     }
     .btn {
         color:#000000;
-        float: right;
         font-family: 'Lato';
         font-size: 16px;
+    }
+    .btn-group {
+    float: right;
     }
