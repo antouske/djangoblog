@@ -32,8 +32,13 @@
     .top-menu, .top-menu:hover, .top-menu:visited {
         color: #ffffff;
         float: right;
-        font-size: 26pt;
+        font-size: 16pt;
         margin-right: 20px;
+    }
+    .top-greetings {
+        color:#ffffff;
+        font-size: 16pt;
+        font-family: 'Lato';
     }
 
     .post {
